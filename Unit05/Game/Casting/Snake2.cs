@@ -2,20 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Unit05.Game.Casting
 {
     /// <summary>
     /// <para>A long limbless reptile.</para>
     /// <para>The responsibility of Snake is to move itself.</para>
     /// </summary>
-    public class Snake : Actor
+    public class Snake2 : Actor
     {
         private List<Actor> _segments = new List<Actor>();
 
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake()
+        public Snake2()
         {
             PrepareBody();
         }
@@ -101,7 +102,7 @@ namespace Unit05.Game.Casting
         private void PrepareBody()
         {
             int x = Constants.CELL_SIZE * (Constants.SNAKE_LENGTH-1);
-            int y = -(Constants.MAX_Y / 4);
+            int y = Constants.MAX_Y / 4;
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
