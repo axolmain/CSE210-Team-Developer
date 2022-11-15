@@ -86,6 +86,7 @@ namespace Unit05.Game.Scripting
                 {
                     _isGameOver = true;
                     _winner = 1;
+
                 }
             }
 
