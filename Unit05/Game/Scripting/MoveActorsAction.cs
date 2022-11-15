@@ -33,9 +33,11 @@ namespace Unit05.Game.Scripting
         public MoveActorsAction()
         {}
         public void Execute(Cast cast, Script script) {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            snake.MoveNext();
-            
+            List<Actor> actors = cast.GetAllActors();
+            foreach (Actor actor in actors)
+            {
+                actor.MoveNext();
+            }
         }
     }
 
