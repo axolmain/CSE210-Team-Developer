@@ -6,7 +6,7 @@ namespace Unit05.Game.Scripting
 {
     // TODO: Implement the MoveActorsAction class here
 
-    // 1) Add the class declaration. Use the following class comment. Make sure you
+    // 1) Add the class declaration. Use the allowing class comment. Make sure you
     //    inherit from the Action class.
 
     /// <summary>
@@ -18,7 +18,7 @@ namespace Unit05.Game.Scripting
     public class MoveActorsAction : Action {
 
     
-
+        int steps = 0;
         // 2) Create the class constructor. Use the following method comment.
 
         /// <summary>
@@ -37,7 +37,13 @@ namespace Unit05.Game.Scripting
             foreach (Actor actor in actors)
             {
                 actor.MoveNext();
+                steps = steps + 1;
+                
             }
+            if (steps % 60 == 0) {
+                foreach (Snake snake in cast.GetActors("snake") )
+                {snake.GrowTail(1);}
+                }
         }
     }
 

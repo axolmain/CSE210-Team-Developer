@@ -129,6 +129,5 @@ namespace Unit05.Game.Services
             int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);
         }
-
     }
 }

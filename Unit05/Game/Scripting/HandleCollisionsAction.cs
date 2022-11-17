@@ -32,40 +32,39 @@ namespace Unit05.Game.Scripting
         {
             if (_isGameOver == false)
             {
-                HandleFoodCollisions(cast);
+                // HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
-
         /// <summary>
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-        private void HandleFoodCollisions(Cast cast)
-        {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Score score = (Score)cast.GetFirstActor("score");
-            Snake snake2 = (Snake)cast.GetActors("snake")[1];
-            Score score2 = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
+        // private void HandleFoodCollisions(Cast cast)
+        // {
+        //     Snake snake = (Snake)cast.GetFirstActor("snake");
+        //     Score score = (Score)cast.GetFirstActor("score");
+        //     Snake snake2 = (Snake)cast.GetActors("snake")[1];
+        //     Score score2 = (Score)cast.GetFirstActor("score");
+        //     Food food = (Food)cast.GetFirstActor("food");
 
-            if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake.GrowTail(points);
-                score.AddPoints(points);
-                food.Reset();
-            }
+        //     if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
+        //     {
+        //         int points = food.GetPoints();
+        //         snake.GrowTail(points);
+        //         score.AddPoints(points);
+        //         food.Reset();
+        //     }
 
-            else if (snake2.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake2.GrowTail(points);
-                score2.AddPoints2(points);
-                food.Reset();
-            }
-        }
+        //     if (snake2.GetHead().GetPosition().Equals(food.GetPosition()))
+        //     {
+        //         int points = food.GetPoints();
+        //         snake2.GrowTail(points);
+        //         score2.AddPoints2(points);
+        //         food.Reset();
+        //     }
+        // // }
 
         /// <summary>
         /// Sets the game over flag if the snake collides with one of its segments.
@@ -127,6 +126,7 @@ namespace Unit05.Game.Scripting
                     {
                         segment.SetColor(Constants.WHITE);
                         message.SetText("Blue Snake Wins");
+                        
                     }
                 }
                 else if (_winner == 1)

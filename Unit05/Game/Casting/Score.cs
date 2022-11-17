@@ -19,22 +19,20 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Score()
         {
-            AddPoints(0);
-            AddPoints2(0);
         }
 
         /// <summary>
         /// Adds the given points to the score.
         /// </summary>
         /// <param name="points">The points to add.</param>
-        public void AddPoints(int points)
+        public void AddPoints(string points)
         {
-            this._points += points;
+            // this._points += points;
             SetText($"Score: {this._points}");
         }
-        public void AddPoints2(int points)
+        public void AddPoints2(string points)
         {
-            this._points2 += points;
+            // this._points2 += points;
             SetText($"Score: {this._points2}");
         }
     }
