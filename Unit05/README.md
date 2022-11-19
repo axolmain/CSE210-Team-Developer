@@ -1,7 +1,5 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# Cycler
+There's a movie/game this is similar to, but for copyright reasons we can't say the name. It starts with a T and rhymes with prawn.
 
 ---
 ## Getting Started
@@ -25,7 +23,7 @@ root                    (project root folder)
 +-- Game                (source code folder)
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
-+-- Unit04.csproj       (dotnet project file)
++-- Unit05.csproj       (dotnet project file)
 ```
 
 ## Required Technologies
@@ -35,3 +33,4 @@ root                    (project root folder)
 ## Authors
 * Matt Manley (manleym@byui.edu)
 * Scott Burton (burtons@byui.edu)
+* All collaborators mentioned in this repository
