@@ -1,17 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unit05.Game.Services;
 
 namespace Unit05.Game.Casting
 {
     /// <summary>
-    /// <para>A long limbless reptile.</para>
+    /// <para>A fish hook.</para>
     /// </summary>
+    // MouseService mouseservice = new MouseService();
     public class FishHook : Actor
     {
         private Image _image;
         private Actor _actor;
-        private Mouse _mouse;
+        private MouseService _mouse;
         private int _startingY = Constants.MAX_Y/2;
         private static Random _random = new Random();
 
@@ -41,14 +43,6 @@ namespace Unit05.Game.Casting
         public Image GetImage()
         {
             return _image;
-        }
-
-        /// <summary>
-        /// Gets the mouse.
-        /// <summary>
-        public void GetMouse()
-        {
-            return _mouse;
         }
 
         /// <summary>

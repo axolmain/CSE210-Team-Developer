@@ -98,8 +98,6 @@ namespace Unit05.Game.Services
         public void OpenWindow()
         {
             Raylib.InitWindow(Constants.MAX_X, Constants.MAX_Y, Constants.CAPTION);
-            Raylib_h.Image ocean = LoadImage("Unit05/Images/ocean.png");
-            Texture2D texture = LoadTextureFromImage(ocean);
             Raylib.SetTargetFPS(Constants.FRAME_RATE);
         }
 
