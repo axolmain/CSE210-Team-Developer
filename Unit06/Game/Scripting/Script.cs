@@ -1,14 +1,10 @@
 using System.Collections.Generic;
 
 
-namespace Unit05.Game.Scripting
+namespace Unit06.Game.Scripting
 {
     /// <summary>
-    /// <para>A collection of actions.</para>
-    /// <para>
-    /// The responsibility of a cast is to keep track of a collection of actions. It has methods for 
-    /// adding, removing and getting them by a group name.
-    /// </para>
+    /// A collection of actions.
     /// </summary>
     public class Script
     {
@@ -40,6 +36,29 @@ namespace Unit05.Game.Scripting
         }
 
         /// <summary>
+        /// Clears the actions in the given group.
+        /// </summary>
+        /// <param name="group">The given group.</param>
+        public void ClearActions(string group)
+        {
+            if (_actions.ContainsKey(group))
+            {
+                _actions[group] = new List<Action>();
+            }
+        }
+
+        /// <summary>
+        /// Clears all the actions in the script.
+        /// </summary>
+        public void ClearAllActions()
+        {
+            foreach(string group in _actions.Keys)
+            {
+                _actions[group] = new List<Action>();
+            }
+        }
+
+        /// <summary>
         /// Gets the actions in the given group. Returns an empty list if there aren't any.
         /// </summary>
         /// <param name="group">The group name.</param>
@@ -59,7 +78,7 @@ namespace Unit05.Game.Scripting
         /// </summary>
         /// <param name="group">The group name.</param>
         /// <param name="action">The action to remove.</param>
-        public void RemoveActor(string group, Action action)
+        public void RemoveAction(string group, Action action)
         {
             if (_actions.ContainsKey(group))
             {

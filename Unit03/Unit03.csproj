@@ -6,4 +6,8 @@
     <RootNamespace>Unit03</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="raylib" Version="4.2.0.2" />
+  </ItemGroup>
+
 </Project>
