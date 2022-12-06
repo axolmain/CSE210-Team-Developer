@@ -4,6 +4,7 @@ using Raylib_cs;
 using Unit05.Game.Casting;
 
 
+
 namespace Unit05.Game.Services
 {
     /// <summary>
@@ -15,6 +16,7 @@ namespace Unit05.Game.Services
     public class VideoService
     {
         private bool _debug = false;
+        private Raylib_cs.Texture2D _background;
 
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.
@@ -40,7 +42,8 @@ namespace Unit05.Game.Services
         public void ClearBuffer()
         {
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Raylib_cs.Color.BLACK);
+            Raylib.ClearBackground(Raylib_cs.Color.WHITE);
+            Raylib.DrawTexture(_background, Constants.MAX_X/2 - _background.width/2, Constants.MAX_Y/2 - _background.height/2, Raylib_cs.Color.WHITE);
             if (_debug)
             {
                 DrawGrid();
@@ -98,7 +101,14 @@ namespace Unit05.Game.Services
         public void OpenWindow()
         {
             Raylib.InitWindow(Constants.MAX_X, Constants.MAX_Y, Constants.CAPTION);
+            Raylib_cs.Image bgImage = Raylib.LoadImage("images/ocean.png");  
+            _background = Raylib.LoadTextureFromImage(bgImage);
             Raylib.SetTargetFPS(Constants.FRAME_RATE);
+        }
+
+        public void unloadImage()
+        {
+
         }
 
         /// <summary>
