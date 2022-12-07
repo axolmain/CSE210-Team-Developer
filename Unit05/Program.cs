@@ -21,6 +21,7 @@ namespace Unit05
         {
             // create the cast
             Cast cast = new Cast();
+            cast.AddActor("hook",new FishHook());
             cast.AddActor("food", new Food());
             cast.AddActor("snake", new Snake(Constants.YELLOW, Constants.GREEN,   -(Constants.MAX_Y / 4)));
             cast.AddActor("snake", new Snake(Constants.RED, Constants.BLUE,   (Constants.MAX_Y / 4)));
@@ -29,6 +30,7 @@ namespace Unit05
             // create the services
             KeyboardService keyboardService = new KeyboardService();
             VideoService videoService = new VideoService(false);
+
            
             // create the script
             Script script = new Script();

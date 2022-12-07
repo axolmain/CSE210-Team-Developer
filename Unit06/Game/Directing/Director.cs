@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unit06.Game.Casting;
 using Unit06.Game.Scripting;
@@ -47,6 +48,9 @@ namespace Unit06.Game.Directing
                 ExecuteActions(Constants.INPUT);
                 ExecuteActions(Constants.UPDATE);
                 ExecuteActions(Constants.OUTPUT);
+
+                Console.WriteLine()
+
             }
             ExecuteActions(Constants.UNLOAD);
             ExecuteActions(Constants.RELEASE);

@@ -56,7 +56,7 @@ namespace Unit05.Game.Casting
         /// Gets the actor's text.
         /// </summary>
         /// <returns>The text.</returns>
-        public string GetText()
+        public virtual string GetText()
         {
             return _text;
         }

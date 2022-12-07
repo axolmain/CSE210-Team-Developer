@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Unit05.Game.Services;
 
 namespace Unit05.Game.Casting
@@ -8,23 +9,28 @@ namespace Unit05.Game.Casting
     /// <summary>
     /// <para>A fish hook.</para>
     /// </summary>
-    // MouseService mouseservice = new MouseService();
     public class FishHook : Actor
     {
         private Image _image;
-        private Actor _actor;
-        private MouseService _mouse;
+        private Actor _hook;
         private int _startingY = Constants.MAX_Y/2;
-        private static Random _random = new Random();
 
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Constructs a new instance of Fishhook.
         /// </summary>
-        public FishHook(Actor actor, Image image, int _startingY)
+        public FishHook()
         {
-            this._actor = actor;
-            this._image = image;
-            this._startingY = 10;
+            int x = 500;
+            int y = _startingY;
+
+            Point position = new Point(x, y);
+            //Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
+            string text = "J";
+            Color color = Constants.WHITE;
+            SetPosition(position);
+            //SetVelocity(velocity);
+            SetText(text);
+            SetColor(color);
         }
         
         /// <summary>
@@ -33,8 +39,9 @@ namespace Unit05.Game.Casting
         /// <returns>The actor.</returns>
         public Actor GetActor()
         {
-            return _actor;
+            return this;
         }
+
 
         /// <summary>
         /// Gets the image.
@@ -43,19 +50,6 @@ namespace Unit05.Game.Casting
         public Image GetImage()
         {
             return _image;
-        }
-
-        /// <summary>
-        /// Moves the hook vertically based on the mouse input.
-        /// </summary>
-        public void FollowMouse()
-        {
-            Point velocity = _actor.GetVelocity();
-            double rn = (_random.NextDouble() * (1.2 - 0.8) + 0.8);
-            double vx = 50;
-            double vy = velocity.GetY() * -1;
-            Point newVelocity = new Point((int)vx, (int)vy);
-            _actor.SetVelocity(newVelocity);
         }
     }
 }

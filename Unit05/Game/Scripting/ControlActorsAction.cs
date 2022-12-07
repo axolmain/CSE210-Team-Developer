@@ -1,3 +1,4 @@
+using System;
 using Unit05.Game.Casting;
 using Unit05.Game.Services;
 
@@ -14,7 +15,6 @@ namespace Unit05.Game.Scripting
     {
         private KeyboardService _keyboardService;
         private Point _direction = new Point(Constants.CELL_SIZE, 0);
-        private Point _direction2 = new Point(Constants.CELL_SIZE, 0);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -27,61 +27,43 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            // left
-            if (_keyboardService.IsKeyDown("a"))
+            FishHook hook = (FishHook)cast.GetFirstActor("hook");
+
+            if (_keyboardService.IsKeyDown("up") & hook.GetPosition().GetY() > 0) 
             {
-                _direction = new Point(-Constants.CELL_SIZE, 0);
+                hook.SetVelocity(new Point (0, -1 * Constants.CELL_SIZE));
             }
-
-            // right
-            if (_keyboardService.IsKeyDown("d"))
+            else if (_keyboardService.IsKeyDown("down") & hook.GetPosition().GetY() < Constants.MAX_Y-50)
             {
-                _direction = new Point(Constants.CELL_SIZE, 0);
+                hook.SetVelocity(new Point (0, +1 * Constants.CELL_SIZE));
             }
-
-            // up
-            if (_keyboardService.IsKeyDown("w"))
+            else
             {
-                _direction = new Point(0, -Constants.CELL_SIZE);
+                hook.SetVelocity(new Point(0, 0));
             }
-
-            // down
-            if (_keyboardService.IsKeyDown("s"))
-            {
-                _direction = new Point(0, Constants.CELL_SIZE);
-            }
-
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            snake.TurnHead(_direction);
-
-
-            // for blue Snake
             
-            if (_keyboardService.IsKeyDown("j"))
-            {
-                _direction2 = new Point(-Constants.CELL_SIZE, 0);
-            }
 
-            // right
-            if (_keyboardService.IsKeyDown("l"))
-            {
-                _direction2 = new Point(Constants.CELL_SIZE, 0);
-            }
 
-            // up
-            if (_keyboardService.IsKeyDown("i"))
-            {
-                _direction2 = new Point(0, -Constants.CELL_SIZE);
-            }
+            //// up
+            //if (_keyboardService.IsKeyDown("up"))
+            //{
+            //    _direction = new Point(+1, Constants.CELL_SIZE);
+            //    hook.MoveNext(_direction);
+            //    Console.WriteLine("UP");
+            //}
 
-            // down
-            if (_keyboardService.IsKeyDown("k"))
-            {
-                _direction2 = new Point(0, Constants.CELL_SIZE);
-            }
+            //// down
+            //if (_keyboardService.IsKeyDown("down"))
+            //{
+            //    _direction = new Point(-1, Constants.CELL_SIZE);
+            //    hook.MoveNext(_direction);
+            //    Console.WriteLine("Down");
+            //}
 
-            Snake snake2 = (Snake)cast.GetActors("snake")[1];
-            snake2.TurnHead(_direction2);
+
+            //Snake snake = (Snake)cast.GetFirstActor("snake");
+            //snake.TurnHead(_direction);
+
 
         }
     }
