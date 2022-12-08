@@ -32,7 +32,7 @@ namespace Unit05.Game.Casting
             SetText(text);
             SetColor(color);
         }
-        
+
         /// <summary>
         /// Gets the actor.
         /// </summary>
