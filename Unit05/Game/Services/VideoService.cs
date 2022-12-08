@@ -65,7 +65,9 @@ namespace Unit05.Game.Services
             Raylib.DrawText(text, x, y, fontSize, color);
         }
 
-
+        /// <summary>
+        /// Draws the line to the fishhook.
+        /// </summary>
         public void DrawLine(int startx, int starty, int endx, int endy)
         {
             Raylib.DrawLine(startx, starty, endx, endy, Raylib_cs.Color.WHITE);
@@ -111,6 +113,7 @@ namespace Unit05.Game.Services
             _background = Raylib.LoadTextureFromImage(bgImage);
             Raylib.SetTargetFPS(Constants.FRAME_RATE);
         }
+
 
         public void unloadImage()
         {
