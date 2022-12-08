@@ -32,6 +32,7 @@ namespace Unit05.Game.Scripting
             Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
             Actor hook = cast.GetFirstActor("hook");
+            List<Actor> artifacts = cast.GetActors("artifacts");
             int y = hook.GetPosition().GetY();
             
             _videoService.ClearBuffer();
@@ -42,6 +43,7 @@ namespace Unit05.Game.Scripting
             _videoService.DrawActors(messages);
             _videoService.DrawActor(hook);
             _videoService.DrawLine(500, 0, 500, y);
+            _videoService.DrawActors(artifacts);
 
             _videoService.FlushBuffer();
             

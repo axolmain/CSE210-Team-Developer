@@ -1,4 +1,5 @@
-﻿using Unit05.Game.Casting;
+﻿using System;
+using Unit05.Game.Casting;
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
 using Unit05.Game.Services;
@@ -26,6 +27,28 @@ namespace Unit05
             cast.AddActor("snake", new Snake(Constants.YELLOW, Constants.GREEN,   -(Constants.MAX_Y / 4)));
             cast.AddActor("snake", new Snake(Constants.RED, Constants.BLUE,   (Constants.MAX_Y / 4)));
             cast.AddActor("score", new Score());
+            Random random = new Random();
+            for (int i = 0; i < 30; i++)
+            {
+                string text = "><{{{0>";
+
+                int x = random.Next(1, Constants.COLUMNS);
+                int y = random.Next(1, Constants.ROWS);
+                Point position = new Point(x, y);
+                position = position.Scale(Constants.CELL_SIZE);
+
+                int r = random.Next(0, 256);
+                int g = random.Next(0, 256);
+                int b = random.Next(0, 256);
+                Color color = new Color(r, g, b);
+
+                Artifact artifact = new Artifact();
+                artifact.SetText(text);
+                artifact.SetFontSize(Constants.FONT_SIZE);
+                artifact.SetColor(color);
+                artifact.SetPosition(position);
+                cast.AddActor("artifacts", artifact);
+            }
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

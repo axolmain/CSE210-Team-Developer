@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Unit05.Game.Casting;
 using Unit05.Game.Scripting;
 using Unit05.Game.Services;
+using Action = Unit05.Game.Scripting.Action;
 
 
 namespace Unit05.Game.Directing
@@ -37,6 +39,16 @@ namespace Unit05.Game.Directing
             {
                 ExecuteActions("input", cast, script);
                 ExecuteActions("update", cast, script);
+                List<Actor> artifacts = cast.GetActors("artifacts");
+                foreach (Artifact actor in artifacts)
+                {
+                    Point direction = new Point(1, 0); 
+                    direction = direction.Scale(4); 
+                    actor.SetVelocity(direction); 
+                    actor.MoveNext();
+
+                    Random random = new Random();
+                } 
                 ExecuteActions("output", cast, script);
             }
             _videoService.CloseWindow();

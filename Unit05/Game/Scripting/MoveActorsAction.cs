@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unit05.Game.Casting;
 
@@ -40,10 +41,17 @@ namespace Unit05.Game.Scripting
                 steps = steps + 1;
                 
             }
-            if (steps % 60 == 0) {
-                foreach (Snake snake in cast.GetActors("snake") )
-                {snake.GrowTail(1);}
-                }
+            List<Actor> artifacts = cast.GetActors("artifacts");
+            foreach (Artifact actor in artifacts)
+            {
+                Point direction = new Point(1, 0);
+                direction = direction.Scale(4);
+                actor.SetVelocity(direction);
+                actor.MoveNext();
+
+                Random random = new Random();
+            }
+            
         }
     }
 
