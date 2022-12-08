@@ -65,6 +65,12 @@ namespace Unit05.Game.Services
             Raylib.DrawText(text, x, y, fontSize, color);
         }
 
+
+        public void DrawLine(int startx, int starty, int endx, int endy)
+        {
+            Raylib.DrawLine(startx, starty, endx, endy, Raylib_cs.Color.WHITE);
+        }
+
         /// <summary>
         /// Draws the given list of actors on the screen.
         /// </summary>
