@@ -33,7 +33,7 @@ namespace Unit05
                 string text = "><{{{0>";
 
                 int x = random.Next(1, Constants.COLUMNS);
-                int y = random.Next(1, Constants.ROWS);
+                int y = random.Next(9, 42);
                 Point position = new Point(x, y);
                 position = position.Scale(Constants.CELL_SIZE);
 
