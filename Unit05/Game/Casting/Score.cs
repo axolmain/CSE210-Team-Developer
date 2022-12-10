@@ -12,7 +12,6 @@ namespace Unit05.Game.Casting
     public class Score : Actor
     {
         private int _points = 0;
-        private int _points2 = 0;
 
         /// <summary>
         /// Constructs a new instance of an Food.
@@ -30,10 +29,6 @@ namespace Unit05.Game.Casting
             // this._points += points;
             SetText($"Score: {this._points}");
         }
-        public void AddPoints2(string points)
-        {
-            // this._points2 += points;
-            SetText($"Score: {this._points2}");
-        }
+
     }
 }
