@@ -72,16 +72,15 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Actor head = snake.GetHead();
+            FishHook hook = (FishHook)cast.GetFirstActor("hook");
+            int y = hook.GetPosition().GetY();
+            int x = hook.GetPosition().GetX();
             List<Actor> body = snake.GetBody();
-            Snake snake2 = (Snake)cast.GetActors("snake")[1];
-            Actor head2 = snake2.GetHead();
-            List<Actor> body2 = snake2.GetBody();
+            Fish anyfish = (Fish)cast.GetActors("fish");
 
             foreach (Actor segment in body)
             {
-                if (segment.GetPosition().Equals(head2.GetPosition()))
+                if (segment.GetPosition().Equals(hook.GetPosition()))
                 {
                     _isGameOver = true;
                     _winner = 1;
