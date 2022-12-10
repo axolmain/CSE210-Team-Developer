@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Unit05.Game.Casting;
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
@@ -33,7 +34,7 @@ namespace Unit05
                 string text = "><{{{0>";
 
                 int x = random.Next(1, Constants.COLUMNS);
-                int y = random.Next(9, 42);
+                int y = random.Next(10, 40);
                 Point position = new Point(x, y);
                 position = position.Scale(Constants.CELL_SIZE);
 
@@ -60,6 +61,21 @@ namespace Unit05
             script.AddAction("input", new ControlActorsAction(keyboardService));
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new HandleCollisionsAction());
+            List<Actor> artifacts = cast.GetActors("artifacts");
+            Actor hook = cast.GetFirstActor("hook");
+            Console.WriteLine(hook.GetPosition());
+            foreach (Artifact actor in artifacts)
+            {
+                Point direction = new Point(1, 0);
+                direction = direction.Scale(1);
+                actor.SetVelocity(direction);
+                actor.MoveNext();
+                if (hook.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Console.WriteLine("good");
+                }
+            }
+
             script.AddAction("output", new DrawActorsAction(videoService));
 
             // start the game

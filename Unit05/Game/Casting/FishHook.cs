@@ -13,14 +13,14 @@ namespace Unit05.Game.Casting
     {
         private Image _image;
         private Actor _hook;
-        private int _startingY = Constants.MAX_Y/2;
+        private int _startingY = Constants.MAX_Y / 2;
 
         /// <summary>
         /// Constructs a new instance of Fishhook.
         /// </summary>
         public FishHook()
         {
-            int x = 500;
+            int x = 495;
             int y = _startingY;
 
             Point position = new Point(x, y);
@@ -37,6 +37,7 @@ namespace Unit05.Game.Casting
         /// Gets the actor.
         /// </summary>
         /// <returns>The actor.</returns>
+
         public Actor GetActor()
         {
             return this;

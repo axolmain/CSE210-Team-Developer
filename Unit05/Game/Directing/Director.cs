@@ -39,16 +39,24 @@ namespace Unit05.Game.Directing
             {
                 ExecuteActions("input", cast, script);
                 ExecuteActions("update", cast, script);
+                FishHook hook = new FishHook();
+                Snake snake = new Snake();
                 List<Actor> artifacts = cast.GetActors("artifacts");
+                Actor robot = cast.GetFirstActor("robot");
                 foreach (Artifact actor in artifacts)
-                {
+                {   
                     Point direction = new Point(1, 0); 
                     direction = direction.Scale(4); 
                     actor.SetVelocity(direction); 
                     actor.MoveNext();
-
+                    
                     Random random = new Random();
+                    if (snake.GetPosition().Equals(actor.GetPosition()))
+                    {
+                        Console.WriteLine("true");
+                    }
                 } 
+                
                 ExecuteActions("output", cast, script);
             }
             _videoService.CloseWindow();
