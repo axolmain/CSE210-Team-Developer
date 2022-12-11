@@ -8,7 +8,7 @@ namespace Unit05.Game.Casting{
     public class Artifact : Actor
     {
         private int _value = 0;
-
+        
         /// <summary>
         /// Constructs a new instance of Artifact.
         /// </summary>

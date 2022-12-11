@@ -31,7 +31,7 @@ namespace Unit05
             Random random = new Random();
             for (int i = 0; i < 30; i++)
             {
-                string text = "#";
+                string text = "><{{{0>";
 
                 int x = random.Next(1, Constants.COLUMNS);
                 int y = random.Next(10, Constants.ROWS);
