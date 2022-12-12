@@ -34,23 +34,23 @@ namespace Unit05.Game.Scripting
         public MoveActorsAction()
         {}
         public void Execute(Cast cast, Script script) {
-            List<Actor> actors = cast.GetAllActors();
-            foreach (Actor actor in actors)
-            {
-                actor.MoveNext();
-                steps = steps + 1;
-                
-            }
+            FishHook hook = (FishHook)cast.GetFirstActor("hook");
+            hook.MoveNext();
             List<Actor> artifacts = cast.GetActors("artifacts");
             foreach (Artifact actor in artifacts)
             {
                 Point direction = new Point(1, 0);
-                direction = direction.Scale(4);
+                direction = direction.Scale(5);
                 actor.SetVelocity(direction);
                 actor.MoveNext();
-
+            
                 Random random = new Random();
+            
+                // Console.WriteLine($"{actor.GetPosition().GetX()}, {actor.GetPosition().GetY()}");
+            
             }
+
+            // Console.WriteLine($"{hook.GetPosition().GetX()}, {actor.GetPosition().GetY()}");
             
         }
     }
