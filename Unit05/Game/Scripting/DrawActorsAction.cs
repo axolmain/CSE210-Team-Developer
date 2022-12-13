@@ -36,6 +36,7 @@ namespace Unit05.Game.Scripting
             _videoService.DrawActor(score);
             _videoService.DrawActor(hook);
             _videoService.DrawLine(500, 0, 500, y);
+            
             _videoService.DrawActors(artifacts);
             _videoService.FlushBuffer();
             

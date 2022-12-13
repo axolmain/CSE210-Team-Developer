@@ -11,7 +11,7 @@ namespace Unit05.Game.Casting
     /// </summary>
     public class Score : Actor
     {
-        private int _points = 0;
+        public int _points = 0;
 
         /// <summary>
         /// Constructs a new instance of an Food.

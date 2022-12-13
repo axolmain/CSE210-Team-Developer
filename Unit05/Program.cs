@@ -26,7 +26,7 @@ namespace Unit05
             cast.AddActor("hook",new FishHook());
             cast.AddActor("score", new Score());
             Random random = new Random();
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < Constants.FISHIES; i++)
             {
                 string text = "><{{{0>";
 

@@ -19,7 +19,6 @@ namespace Unit05.Game.Scripting
         private bool _isGameOver = false;
         private string _winning_message = "";
         private int _winner = 0;
-        private int _score = 0;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -37,8 +36,7 @@ namespace Unit05.Game.Scripting
             if (_isGameOver == false)
             {
                 HandleFoodCollisions(cast);
-                // HandleSegmentCollisions(cast);
-                // HandleGameOver(cast);
+                HandleGameOver(cast);
             }
         }
 
@@ -65,25 +63,20 @@ namespace Unit05.Game.Scripting
             /// Sets the game over flag if the snake collides with one of its segments.
             /// </summary>
             /// <param name="cast">The cast of actors.</param>
-
-            void HandleGameOver(Cast cast)
+        }
+        void HandleGameOver(Cast cast)
+        {
+            Score score = (Score)cast.GetFirstActor("score");
+            if (score._points == Constants.FISHIES)
             {
-                if (_isGameOver == true)
-                {
 
-                    // create a "game over" message
-                    int x = Constants.MAX_X / 2;
-                    int y = Constants.MAX_Y / 2;
-                    Point position = new Point(x, y);
-
-                    Actor message = new Actor();
-                    message.SetText("Game Over!");
-                    message.SetPosition(position);
-                    cast.AddActor("messages", message);
-                    
-                }
-
+                // create a "game over" message
+                int x = Constants.MAX_X / 2;
+                int y = Constants.MAX_Y / 2;
+                Point position = new Point(x, y);
+                Console.WriteLine("over");
             }
+
         }
     }
 }

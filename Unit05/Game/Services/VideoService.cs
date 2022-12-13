@@ -108,10 +108,13 @@ namespace Unit05.Game.Services
         /// </summary>
         public void OpenWindow()
         {
+            Raylib.InitAudioDevice();
             Raylib.InitWindow(Constants.MAX_X, Constants.MAX_Y, Constants.CAPTION);
             Raylib_cs.Image bgImage = Raylib.LoadImage("images/ocean.png");  
             _background = Raylib.LoadTextureFromImage(bgImage);
             Raylib.SetTargetFPS(Constants.FRAME_RATE);
+            Raylib_cs.Sound song = Raylib.LoadSound("images/themesong.mp3");
+            Raylib.PlaySound(song);
         }
 
 
