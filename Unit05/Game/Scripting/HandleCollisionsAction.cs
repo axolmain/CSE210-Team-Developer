@@ -50,13 +50,13 @@ namespace Unit05.Game.Scripting
         {
             FishHook hook = (FishHook)cast.GetFirstActor("hook");
             List<Actor> artifacts = cast.GetActors("artifacts");
-            Score scoreCount = new Score();
+            Score score = (Score)cast.GetFirstActor("score");
             foreach (Actor artifact in artifacts)
             {
                 if (artifact.GetPosition().Equals(hook.GetPosition()))
                 {
                     cast.RemoveActor("artifacts", artifact);
-                     scoreCount.AddScore(1);
+                    score.AddScore(1);
                 }
             }
             
