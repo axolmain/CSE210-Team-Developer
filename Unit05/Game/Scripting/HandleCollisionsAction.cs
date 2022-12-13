@@ -61,7 +61,7 @@ namespace Unit05.Game.Scripting
             {
                 if (artifact.GetPosition().Equals(hook.GetPosition()))
                 {
-                    Console.WriteLine("true2");
+                    cast.RemoveActor("artifacts", artifact);
                 }
             }
             
