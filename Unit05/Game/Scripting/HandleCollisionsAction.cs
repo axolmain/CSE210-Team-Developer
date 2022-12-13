@@ -69,12 +69,14 @@ namespace Unit05.Game.Scripting
             Score score = (Score)cast.GetFirstActor("score");
             if (score._points == Constants.FISHIES)
             {
-
                 // create a "game over" message
-                int x = Constants.MAX_X / 2;
-                int y = Constants.MAX_Y / 2;
+                int x = 50;
+                int y = 150;
                 Point position = new Point(x, y);
-                Console.WriteLine("over");
+                score.SetPosition(position);
+                score.SetColor(Constants.WHITE);
+                score.SetText("GAME OVER YOU WON\n i mean you can't lose but still...\n congrats");
+                score.SetFontSize(50);
             }
 
         }
