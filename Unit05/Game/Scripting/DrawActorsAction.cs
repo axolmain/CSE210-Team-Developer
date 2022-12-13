@@ -14,7 +14,7 @@ namespace Unit05.Game.Scripting
         private VideoService _videoService;
 
         /// <summary>
-        /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
+        /// Constructs a new instance of ControlActorsAction using the given Videoservice.
         /// </summary>
         public DrawActorsAction(VideoService videoService)
         {
@@ -22,6 +22,9 @@ namespace Unit05.Game.Scripting
         }
 
         /// <inheritdoc/>
+        /// <summary>
+        /// Adds each actor to the cast then draws the actors.
+        /// <summary>
         public void Execute(Cast cast, Script script)
         {
             Actor score = cast.GetFirstActor("score");
@@ -34,7 +37,6 @@ namespace Unit05.Game.Scripting
             _videoService.DrawActor(hook);
             _videoService.DrawLine(500, 0, 500, y);
             _videoService.DrawActors(artifacts);
-
             _videoService.FlushBuffer();
             
         }

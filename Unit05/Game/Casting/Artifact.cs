@@ -1,8 +1,8 @@
 namespace Unit05.Game.Casting{
     /// <summary>
-    /// <para>An item of cultural or historical interest.</para>
+    /// <para>The fish.</para>
     /// <para>
-    /// The responsibility of an Artifact is to provide a message about itself.
+    /// The responsibility of a fish is to provide a message about itself.
     /// </para>
     /// </summary>
     public class Artifact : Actor
@@ -29,13 +29,5 @@ namespace Unit05.Game.Casting{
         public int GetMessage(){
             return _value;
         }
-        
-        /// <summary>
-        /// Sets the artifact's message to the given value.
-        /// </summary>
-        /// <param name="message">The given message.</param>
-        // public void SetMessage(int message){
-        // _value = message;
-        // }
     }
 }

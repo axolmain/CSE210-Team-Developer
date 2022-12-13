@@ -11,7 +11,6 @@ namespace Unit05.Game.Casting
     /// </summary>
     public class FishHook : Actor
     {
-        private Image _image;
         private Actor _hook;
         private int _startingY = Constants.MAX_Y / 2;
 
@@ -24,11 +23,9 @@ namespace Unit05.Game.Casting
             int y = _startingY;
 
             Point position = new Point(x, y);
-            //Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
             string text = "J";
             Color color = Constants.WHITE;
             SetPosition(position);
-            //SetVelocity(velocity);
             SetText(text);
             SetColor(color);
         }
@@ -41,16 +38,6 @@ namespace Unit05.Game.Casting
         public Actor GetActor()
         {
             return this;
-        }
-
-
-        /// <summary>
-        /// Gets the image.
-        /// </summary>
-        /// <returns>The image.</returns>
-        public Image GetImage()
-        {
-            return _image;
         }
     }
 }
