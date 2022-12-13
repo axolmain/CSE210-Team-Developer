@@ -17,12 +17,8 @@ namespace Unit05.Game.Casting
         /// Constructs a new instance of an Food.
         /// </summary>
         public Score()
-        {
-            SetText($"Score: {this._points}");
-            SetColor(Constants.RED);
-            SetFontSize(50);
-            Point position = new Point(15, 15);
-            SetPosition(position);
+        {          
+            AddScore(0);
         }
 
         /// <summary>
@@ -32,6 +28,11 @@ namespace Unit05.Game.Casting
         public void AddScore(int points)
         {
             this._points += points;
+            SetText($"Score: {this._points}");
+            SetColor(Constants.RED);
+            SetFontSize(50);
+            Point position = new Point(15, 15);
+            SetPosition(position);
         }
 
     }
