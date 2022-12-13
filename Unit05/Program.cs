@@ -24,7 +24,6 @@ namespace Unit05
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("hook",new FishHook());
-            cast.AddActor("food", new Food());
             cast.AddActor("score", new Score());
             Random random = new Random();
             for (int i = 0; i < 30; i++)
