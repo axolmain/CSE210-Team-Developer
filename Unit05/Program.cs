@@ -25,8 +25,6 @@ namespace Unit05
             Cast cast = new Cast();
             cast.AddActor("hook",new FishHook());
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake(Constants.YELLOW, Constants.GREEN,   -(Constants.MAX_Y / 4)));
-            cast.AddActor("snake", new Snake(Constants.RED, Constants.BLUE,   (Constants.MAX_Y / 4)));
             cast.AddActor("score", new Score());
             Random random = new Random();
             for (int i = 0; i < 30; i++)

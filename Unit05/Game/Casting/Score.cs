@@ -18,16 +18,20 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Score()
         {
+            SetText($"Score: {this._points}");
+            SetColor(Constants.RED);
+            SetFontSize(50);
+            Point position = new Point(15, 15);
+            SetPosition(position);
         }
 
         /// <summary>
         /// Adds the given points to the score.
         /// </summary>
         /// <param name="points">The points to add.</param>
-        public void AddPoints(string points)
+        public void AddScore(int points)
         {
-            // this._points += points;
-            SetText($"Score: {this._points}");
+            this._points += points;
         }
 
     }
