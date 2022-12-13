@@ -10,8 +10,8 @@ namespace Unit05.Game.Scripting
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
-    /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
-    /// collides with the food, or the snake collides with its segments, or the game is over.
+    /// The responsibility of HandleCollisionsAction is to handle the situation when the hook collides
+    /// with the fish or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -43,7 +43,7 @@ namespace Unit05.Game.Scripting
         }
 
         /// <summary>
-        /// Updates the score nd moves the food if the snake collides with it.
+        /// Updates the score and removes the actor if the hook collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleFoodCollisions(Cast cast)

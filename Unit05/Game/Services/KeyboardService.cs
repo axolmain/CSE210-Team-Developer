@@ -21,14 +21,6 @@ namespace Unit05.Game.Services
         /// </summary>
         public KeyboardService()
         {
-            // _keys["w"] = KeyboardKey.KEY_W;
-            // _keys["a"] = KeyboardKey.KEY_A;
-            // _keys["s"] = KeyboardKey.KEY_S;
-            // _keys["d"] = KeyboardKey.KEY_D;
-            // _keys["i"] = KeyboardKey.KEY_I;
-            // _keys["j"] = KeyboardKey.KEY_J;
-            // _keys["k"] = KeyboardKey.KEY_K;
-            // _keys["l"] = KeyboardKey.KEY_L;
             _keys["up"] = KeyboardKey.KEY_UP;
             _keys["down"] = KeyboardKey.KEY_DOWN;
             _keys["space"] = KeyboardKey.KEY_SPACE;

@@ -104,7 +104,7 @@ namespace Unit05.Game.Services
         }
 
         /// <summary>
-        /// Opens a new window with the provided title.
+        /// Opens a new window with the provided title and images.
         /// </summary>
         public void OpenWindow()
         {
